@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "description" content="Example">
+    <title>Cryto App</title>
+</head>
+<body style="text-align:center;">
+<h1>Double Encryption App</h1>
+<br>
+
+    <h3>Step 1. Select a File to Load:</h3>
+    <input type="file" id="openFile" />                 <!--selectarea fisierului de IN (criptat sau in mesaj clar)-->
+<div id = "fileContents"></div>
+<script type="text/javascript" src = "index.js"></script>
+    <br>
+
+
+
+    <h3>Step 2. Playfair Cipher</h3>
+<p>Enter key:
+    <input type="text" name="key" value="" id="key"/>                   <!--introducerea cheii cu care se va cripta/descripta-->
+<input type="button" value="Load" id="click" onclick="getKey()" />
+</p>
+Missing Letter(type Q or J): <input type="text" name="dup" id = "dup" size="2" value="Q"/> maps to I <!--care litera va fi ignorata din alfabet (J sau Q) si va fi inlocuita cu I(regula a criptarii Playfair)-->
+<script type="text/javascript" src = "index.js"></script>
+<br>
+
+
+
+<h3>Step 3. Caesar Cipher</h3>
+
+<p>Select the alphabet's shift:
+<div class="order-option">
+<!--    Select the alphabet's shift:-->
+    <span id="quantity-field">
+       <button id="down" onclick="setQuantity('down');">-</button>  <!--butoanele pentru a alege shift-area alfabetului-->
+        <input type="text" id="quantity" value="0">
+         <button id="up" onclick="setQuantity('up');">+</button>
+        <p id = "shiftness">A -> A</p>
+<!--        <div id = "shiftness" value = 'a'>a -> </div>-->
+    </span>
+</div>
+<script type="text/javascript" src = "index.js"></script>
+
+
+
+<h3>Step 4. Select the action: </h3>
+    <form>
+        Select:                                         <!--Selectarea actiunii: vrem sa criptam sau sa decriptam fisierul?-->
+        <select id = "select">
+            <option value = "criptare"  id = "e">Encrypt</option>
+            <option value="decriptare" id = "d" >Decrypt</option>
+        </select>
+        <button type = "button" id = "download-btn">Download generated text file</button>   <!--buton pentru downloadarea fisierului obtinut in urma actiunii alese-->
+    </form>
+<script type="text/javascript" src = "index.js"></script>
+</body>
+</html>
+
